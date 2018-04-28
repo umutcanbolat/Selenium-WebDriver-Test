@@ -22,7 +22,6 @@ public class Main {
     browser:
     0 - Google chrome
     1 - Mozilla Firefox
-    
      */
     public static int browser = 0;
 
@@ -30,7 +29,6 @@ public class Main {
         WebDriver driver = null;
 
         try {
-
             switch (browser) {
                 case 0:
                     System.setProperty("webdriver.chrome.driver", "./chromedriver");
@@ -47,7 +45,6 @@ public class Main {
                     driver = new ChromeDriver();
                     break;
             }
-
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
             // Adrese git
@@ -55,11 +52,13 @@ public class Main {
 
             // Tarayıcı boyutlarını manuel belirle
             // driver.manage().window().setSize(new Dimension(600,600));
+            
             // Tarayıcıyı tam ekran yap
             driver.manage().window().maximize();
 
             // Math Calculators a tıkla
             driver.findElement(By.xpath("//*[@id=\"homelistdiv\"]/table/tbody/tr/td[3]/div[2]/a")).click();
+            
             // Percent Calculators a tıkla
             driver.findElement(By.xpath("//*[@id=\"content\"]/ul[1]/li[3]/a")).click();
 
@@ -85,8 +84,6 @@ public class Main {
                 // Driver ı kapat
                 driver.close();
             }
-
         }
-
     }
 }
